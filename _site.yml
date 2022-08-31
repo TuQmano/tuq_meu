@@ -1,0 +1,12 @@
+name: "tuq_meu"
+title: "&quot;TUQMANO EN LA MEU&quot;"
+description: |
+  &quot;TUQMANO EN LA MEU&quot;
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article
