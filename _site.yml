@@ -1,12 +1,20 @@
 name: "tuq_meu"
-title: "&quot;TUQMANO EN LA MEU&quot;"
+title: "TUQMANO EN LA MEU"
 description: |
-  &quot;TUQMANO EN LA MEU&quot;
+  TUQMANO EN LA MEU;
 output_dir: "docs"
 navbar:
   right:
-    - text: "Home"
+    - text: "Inicio" # 
       href: index.html
-    - text: "About"
+    - text: "Sobre este sitio"
       href: about.html
+  left: 
+    - text: "Articulos"
+      menu: 
+        - text: "repel"
+          href: repel.html
+        - text: "distill"
+          href: distill.html
+    
 output: distill::distill_article

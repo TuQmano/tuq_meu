@@ -87,29 +87,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>TUQMANO EN LA MEU</title>
+  <title>TUQMANO EN LA MEU: distill</title>
 
-  <meta property="description" itemprop="description" content="Sitio web de ejemplo"/>
+  <meta property="description" itemprop="description" content="Pasos para crear un sitio web con distill y pubicarlo con Github"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="TUQMANO EN LA MEU"/>
+  <meta property="og:title" content="TUQMANO EN LA MEU: distill"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Sitio web de ejemplo"/>
+  <meta property="og:description" content="Pasos para crear un sitio web con distill y pubicarlo con Github"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="TUQMANO EN LA MEU"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="TUQMANO EN LA MEU"/>
-  <meta property="twitter:description" content="Sitio web de ejemplo"/>
+  <meta property="twitter:title" content="TUQMANO EN LA MEU: distill"/>
+  <meta property="twitter:description" content="Pasos para crear un sitio web con distill y pubicarlo con Github"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["TUQMANO EN LA MEU"]},{"type":"character","attributes":{},"value":["Sitio web de ejemplo\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["distill"]},{"type":"character","attributes":{},"value":["Pasos para crear un sitio web con distill y pubicarlo con Github\n"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2057,7 +2057,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"TUQMANO EN LA MEU","description":"Sitio web de ejemplo","authors":[]}
+{"title":"distill","description":"Pasos para crear un sitio web con distill y pubicarlo con Github","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2090,62 +2090,18 @@ Articulos
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>TUQMANO EN LA MEU</h1>
+<h1>distill</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Sitio web de ejemplo</p></p>
+<p><p>Pasos para crear un sitio web con distill y pubicarlo con Github</p></p>
 </div>
 
 
 <div class="d-article">
-<h1 id="contenido-de-esta-sitio">Contenido de esta sitio</h1>
-<h2 id="paso-a-paso-para-crear-un-sitio-con-distill">Paso a paso para crear un sitio con {distill}</h2>
-<p>Ver en menú: <em>Articulos/distill</em></p>
-<h2 id="ejemplo-de-código-para-mapa-interactivo">Ejemplo de código para mapa interactivo</h2>
-<p><strong>(Fuente: Sixto <a href="https://rpubs.com/Sixto233/936423" class="uri">https://rpubs.com/Sixto233/936423</a>)</strong></p>
-<p>Voy a levantar los datos de geometrías dispoibilizados por Tonio VB.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://r-spatial.github.io/sf/'>sf</a></span><span class='op'>)</span>
-
-<span class='co'>#Descargo geometry de comunas de CABA</span>
-<span class='va'>comunas</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_read.html'>st_read</a></span><span class='op'>(</span><span class='st'>'https://bitsandbricks.github.io/data/CABA_comunas.geojson'</span><span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code>Reading layer `CABA_comunas&#39; from data source 
-  `https://bitsandbricks.github.io/data/CABA_comunas.geojson&#39; 
-  using driver `GeoJSON&#39;
-Simple feature collection with 15 features and 4 fields
-Geometry type: MULTIPOLYGON
-Dimension:     XY
-Bounding box:  xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754
-Geodetic CRS:  WGS 84</code></pre>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Barrios#</span>
-
-<span class='va'>barrios</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_read.html'>st_read</a></span><span class='op'>(</span><span class='st'>'https://bitsandbricks.github.io/data/CABA_barrios.geojson'</span><span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code>Reading layer `CABA_barrios&#39; from data source 
-  `https://bitsandbricks.github.io/data/CABA_barrios.geojson&#39; 
-  using driver `GeoJSON&#39;
-Simple feature collection with 48 features and 4 fields
-Geometry type: POLYGON
-Dimension:     XY
-Bounding box:  xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754
-Geodetic CRS:  WGS 84</code></pre>
-</div>
-<h1 id="houston">HOUSTON…</h1>
-<p>Tenemos un problema para reproducir el ejemplo, dado que en el RPub no tengo referencia de donde levantar la info sobre florerías para el análisis. Cortamos acá el ejemplo.</p>
-<p><img src="figs/rpub.png" /></p>
-<h1 id="articulos-en-esta-web">ARTICULOS EN ESTA WEB</h1>
-<ul>
-<li><p>Pueden notar que generamos un menú en la barra de navegación dónde se listan artículos</p></li>
-<li><p>Cada artículo es un .Rmd independiente</p></li>
-<li><p>Los artículos están listados dentro del archivo _site.yml anidados dentro de la barra de navegación</p></li>
-</ul>
-<p><img src="figs/yaml.png" /></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>En esta sección del libro de RStudio for Education (rstudio4edu) se puede seguir el paso a paso para la creación y publicación de contenido en línea con distill.</p>
+<p><a href="https://rstudio4edu.github.io/rstudio4edu-book/make-distill.html" class="uri">https://rstudio4edu.github.io/rstudio4edu-book/make-distill.html</a></p>
+<p>Para los más curiosos, una opción para la publicación de contenido digital más novedosa (en pleno desarrollo) es <a href="https://quarto.org/" class="uri">https://quarto.org/</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

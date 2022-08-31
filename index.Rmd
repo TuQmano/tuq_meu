@@ -1,7 +1,7 @@
 ---
-title: "&quot;TUQMANO EN LA MEU&quot;"
+title: "TUQMANO EN LA MEU"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  Sitio web de ejemplo
 site: distill::distill_website
 ---
 
@@ -16,3 +16,42 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
+# Contenido de esta sitio 
+
+## Paso a paso para crear un sitio con {distill} 
+
+Ver en menú: _Articulos/distill_
+
+## Ejemplo de código para mapa interactivo
+
+**(Fuente: Sixto <https://rpubs.com/Sixto233/936423>)**
+
+Voy a levantar los datos de geometrías dispoibilizados por Tonio VB.
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
+library(sf)
+
+#Descargo geometry de comunas de CABA
+comunas <- st_read('https://bitsandbricks.github.io/data/CABA_comunas.geojson')
+
+#Barrios#
+
+barrios <- st_read('https://bitsandbricks.github.io/data/CABA_barrios.geojson')
+```
+
+# HOUSTON...
+
+Tenemos un problema para reproducir el ejemplo, dado que en el RPub no tengo referencia de donde levantar la info sobre florerías para el análisis. Cortamos acá el ejemplo.
+
+![](figs/rpub.png)
+
+
+# ARTICULOS EN ESTA WEB
+
+* Pueden notar que generamos un menú en la barra de navegación dónde se listan artículos
+
+* Cada artículo es un .Rmd independiente
+
+* Los artículos están listados dentro del archivo _site.yml anidados dentro de la barra de navegación 
+
+![](figs/yaml.png)

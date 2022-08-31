@@ -1,0 +1,18 @@
+---
+title: "distill"
+description: |
+  Pasos para crear un sitio web con distill y pubicarlo con Github
+
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+En esta sección del libro de RStudio for Education (rstudio4edu) se puede seguir el paso a paso para la creación y publicación de contenido en línea con distill. 
+
+https://rstudio4edu.github.io/rstudio4edu-book/make-distill.html
+
+
+Para los más curiosos, una opción para la publicación de contenido digital más novedosa (en pleno desarrollo) es  https://quarto.org/

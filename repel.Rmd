@@ -1,0 +1,46 @@
+---
+title: "Como repeler etiquetas"
+description: |
+  Parametrizando para sf el uso de ggrepell y applicación a sf
+date: "`r Sys.Date()-1`"
+output: distill::distill_article
+---
+
+
+
+# CASO BASICO
+```{r echo = TRUE}
+library(ggplot2)
+library(sf)
+
+#Descargo geometry de comunas de CABA
+comunas <- st_read('https://bitsandbricks.github.io/data/CABA_comunas.geojson')
+
+ggplot(comunas) +
+  geom_sf()+ 
+  geom_sf_label(aes(label = glue::glue("Comuna {comunas}")))
+
+
+
+```
+
+# CASO _repel_
+
+
+```{r echo = TRUE}
+library(ggplot2)
+library(sf)
+
+#Descargo geometry de comunas de CABA
+comunas <- st_read('https://bitsandbricks.github.io/data/CABA_comunas.geojson')
+
+ggplot(comunas) +
+  geom_sf()+ 
+  ggsflabel::geom_sf_label_repel(aes(label = glue::glue("Comuna {comunas}")))
+
+
+
+```
+
+
+

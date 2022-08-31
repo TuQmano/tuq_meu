@@ -6,15 +6,32 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-08-30T21:05:02-03:00"
+      "last_modified": "2022-08-31T12:47:34-03:00"
+    },
+    {
+      "path": "distill.html",
+      "title": "distill",
+      "description": "Pasos para crear un sitio web con distill y pubicarlo con Github\n",
+      "author": [],
+      "contents": "\r\nEn esta sección del libro de RStudio for Education (rstudio4edu) se puede seguir el paso a paso para la creación y publicación de contenido en línea con distill.\r\nhttps://rstudio4edu.github.io/rstudio4edu-book/make-distill.html\r\nPara los más curiosos, una opción para la publicación de contenido digital más novedosa (en pleno desarrollo) es https://quarto.org/\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-08-31T12:47:35-03:00"
     },
     {
       "path": "index.html",
-      "title": "&quot;TUQMANO EN LA MEU&quot;",
-      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "title": "TUQMANO EN LA MEU",
+      "description": "Sitio web de ejemplo\n",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-08-30T21:05:04-03:00"
+      "contents": "\r\nContenido de esta sitio\r\nPaso a paso para crear un sitio con {distill}\r\nVer en menú: Articulos/distill\r\nEjemplo de código para mapa interactivo\r\n(Fuente: Sixto https://rpubs.com/Sixto233/936423)\r\nVoy a levantar los datos de geometrías dispoibilizados por Tonio VB.\r\n\r\n\r\nlibrary(sf)\r\n\r\n#Descargo geometry de comunas de CABA\r\ncomunas <- st_read('https://bitsandbricks.github.io/data/CABA_comunas.geojson')\r\n\r\n\r\nReading layer `CABA_comunas' from data source \r\n  `https://bitsandbricks.github.io/data/CABA_comunas.geojson' \r\n  using driver `GeoJSON'\r\nSimple feature collection with 15 features and 4 fields\r\nGeometry type: MULTIPOLYGON\r\nDimension:     XY\r\nBounding box:  xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754\r\nGeodetic CRS:  WGS 84\r\n\r\n#Barrios#\r\n\r\nbarrios <- st_read('https://bitsandbricks.github.io/data/CABA_barrios.geojson')\r\n\r\n\r\nReading layer `CABA_barrios' from data source \r\n  `https://bitsandbricks.github.io/data/CABA_barrios.geojson' \r\n  using driver `GeoJSON'\r\nSimple feature collection with 48 features and 4 fields\r\nGeometry type: POLYGON\r\nDimension:     XY\r\nBounding box:  xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754\r\nGeodetic CRS:  WGS 84\r\n\r\nHOUSTON…\r\nTenemos un problema para reproducir el ejemplo, dado que en el RPub no tengo referencia de donde levantar la info sobre florerías para el análisis. Cortamos acá el ejemplo.\r\n\r\nARTICULOS EN ESTA WEB\r\nPueden notar que generamos un menú en la barra de navegación dónde se listan artículos\r\nCada artículo es un .Rmd independiente\r\nLos artículos están listados dentro del archivo _site.yml anidados dentro de la barra de navegación\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-08-31T12:47:43-03:00"
+    },
+    {
+      "path": "repel.html",
+      "title": "Como repeler etiquetas",
+      "description": "Parametrizando para sf el uso de ggrepell y applicación a sf\n",
+      "author": [],
+      "date": "`r Sys.Date()-1`",
+      "contents": "\r\nCASO BASICO\r\n\r\n\r\nlibrary(ggplot2)\r\nlibrary(sf)\r\n\r\n#Descargo geometry de comunas de CABA\r\ncomunas <- st_read('https://bitsandbricks.github.io/data/CABA_comunas.geojson')\r\n\r\n\r\nReading layer `CABA_comunas' from data source \r\n  `https://bitsandbricks.github.io/data/CABA_comunas.geojson' \r\n  using driver `GeoJSON'\r\nSimple feature collection with 15 features and 4 fields\r\nGeometry type: MULTIPOLYGON\r\nDimension:     XY\r\nBounding box:  xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754\r\nGeodetic CRS:  WGS 84\r\n\r\nggplot(comunas) +\r\n  geom_sf()+ \r\n  geom_sf_label(aes(label = glue::glue(\"Comuna {comunas}\")))\r\n\r\n\r\n\r\n\r\nCASO repel\r\n\r\n\r\nlibrary(ggplot2)\r\nlibrary(sf)\r\n\r\n#Descargo geometry de comunas de CABA\r\ncomunas <- st_read('https://bitsandbricks.github.io/data/CABA_comunas.geojson')\r\n\r\n\r\nReading layer `CABA_comunas' from data source \r\n  `https://bitsandbricks.github.io/data/CABA_comunas.geojson' \r\n  using driver `GeoJSON'\r\nSimple feature collection with 15 features and 4 fields\r\nGeometry type: MULTIPOLYGON\r\nDimension:     XY\r\nBounding box:  xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754\r\nGeodetic CRS:  WGS 84\r\n\r\nggplot(comunas) +\r\n  geom_sf()+ \r\n  ggsflabel::geom_sf_label_repel(aes(label = glue::glue(\"Comuna {comunas}\")))\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-08-31T12:47:52-03:00"
     }
   ],
   "collections": []
